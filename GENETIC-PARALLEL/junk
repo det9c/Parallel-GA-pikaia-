@@ -1,0 +1,7 @@
+  
+	Module loaded. Use command 'gsubmit' to submit jobs.
+
+*IMPORTANT* For best performance, please place a 'limit coredumpsize 0'
+             at the end of your /p/home/detaylor/.cshrc startup script! 
+           (bash users will use a 'ulimit -c 0' in /p/home/detaylor/.profile
+

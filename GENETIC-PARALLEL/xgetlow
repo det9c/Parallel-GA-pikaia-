@@ -1,0 +1,3 @@
+cp $1/INPUT ./INPUT-lowest
+cp $1/gout.$1 ./out-lowest
+cat $1/config>>trajectory.xyz

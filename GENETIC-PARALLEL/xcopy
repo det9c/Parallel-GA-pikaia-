@@ -1,0 +1,5 @@
+echo "xcopy $1"
+cd $1
+cp /p/home/detaylor/BUSINESS/ISLR/MASSES/input.R .
+cp /p/home/detaylor/BUSINESS/ISLR/MASSES/mass.formatted .
+cd ..

@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -l select=16:ncpus=8:mpiprocs=8
+#PBS -l place=scatter:excl
+#PBS -N p128-big24 
+#PBS -q standard 
+#PBS -V
+#PBS -j oe
+#PBS -o carl.out
+#PBS -e carl.err
+#xxPBS -k oe
+#PBS -A ARLAP02642520
+#PBS -r n
+#PBS -l walltime=24:00:00
+
+cd /usr/var/tmp/detaylor/compare-big24
+module load compiler/intel11.1 mpi/intelmpi-3.2
+ intelmpirun.pbs ./go>outputfile
+

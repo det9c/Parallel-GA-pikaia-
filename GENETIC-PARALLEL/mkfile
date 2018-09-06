@@ -1,0 +1,22 @@
+#!/bin/bash
+paramvalue=""
+
+cp INPUTheader INPUT
+
+#####################################################
+# read atom names from file names into labels array
+declare -a labels
+exec 90<params
+let count=0
+while read paramvalue <&90; do
+
+    labels[$count]=$paramvalue
+    ((count++))
+done
+#echo ${labels[@]}
+exec 90>&-
+#######################################################
+
+echo "'*TERSOFF* C,${labels[0]},${labels[1]},${labels[2]},${labels[3]},${labels[4]},${labels[5]},${labels[6]},${labels[7]},${labels[8]},${labels[18]},${labels[19]} C,C,1.0,1.0 B,${labels[9]},${labels[10]},${labels[11]},${labels[12]},${labels[13]},${labels[14]},${labels[15]},${labels[16]},${labels[17]},${labels[20]},${labels[21]} B,B,1.,1. B,C,1.,1.'">>INPUT
+
+
